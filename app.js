@@ -1,19 +1,30 @@
 const express = require('express')
 const fs = require('fs')
+const path = require('path')
 
 const app = express()
 
-app.use('/public',express.static('public'))
+app.use('/public', express.static(path.join(__dirname, 'public')))
 
 app.get('/', function (req, res) {
-  let html = fs.readFileSync('./index.html','utf-8')
-  res.header('Content-Type', 'text/html;charset=utf-8');
-  res.send(html)
+  try {
+    let html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf-8')
+    res.header('Content-Type', 'text/html;charset=utf-8');
+    res.send(html)
+  } catch (error) {
+    console.error('Error reading index.html:', error)
+    res.status(500).send('Internal Server Error')
+  }
 })
 
-app.listen(8081, '0.0.0.0', () => { 
-  console.log('服务器启动成功！')
-  console.log('本地访问: http://localhost:8081')
-  console.log('局域网访问: http://你的电脑IP:8081')
-  console.log('请确保手机和电脑在同一个WiFi网络下')
-})
+const port = process.env.PORT || 8081
+
+// 本地开发时启动服务器
+if (require.main === module) {
+  app.listen(port, () => { 
+    console.log(`服务器启动成功！端口: ${port}`)
+  })
+}
+
+// 导出给Vercel使用
+module.exports = app

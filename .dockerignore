@@ -1,0 +1,12 @@
+Dockerfile
+.dockerignore
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.vercel
+vercel.json
+__pycache__
+*.pyc
+compress_images.py 

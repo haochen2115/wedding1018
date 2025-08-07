@@ -17,11 +17,11 @@ app.get('/', function (req, res) {
   }
 })
 
-const port = process.env.PORT || 8081
+const port = process.env.PORT || 80
 
 // 本地开发时启动服务器
 if (require.main === module) {
-  app.listen(port, () => { 
+  app.listen(port, '0.0.0.0', () => { 
     console.log(`服务器启动成功！端口: ${port}`)
   })
 }

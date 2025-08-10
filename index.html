@@ -642,7 +642,7 @@
       // 已移除地图页
       var slideshowRunning = false
 
-              function startSlideshow() {
+                      function startSlideshow() {
           if (slideshowRunning) return
           slideshowRunning = true
           var items = document.querySelectorAll('.slideshow-item')
@@ -654,30 +654,57 @@
               return
             }
 
-          var currentItem = items[currentIndex]
-          var bg = currentItem.getAttribute('data-bg')
-          
-          // 预加载当前图片
-          var img = new Image()
-          img.onload = function() {
-            // 图片加载完成，设置背景并显示
-            currentItem.style.backgroundImage = 'url(' + bg + ')'
-            currentItem.setAttribute('data-loaded', '1')
-            currentItem.classList.remove('hide')
-            currentItem.classList.add(currentItem.getAttribute('data-animate'))
+            var currentItem = items[currentIndex]
+            var bg = currentItem.getAttribute('data-bg')
+            var startTime = Date.now()
+            var hasShown = false
             
-            // 延迟 1.5 秒后切换到下一张
+            // 预加载当前图片
+            var img = new Image()
+            img.onload = function() {
+              if (hasShown) return
+              hasShown = true
+              
+              // 图片加载完成，设置背景并显示
+              currentItem.style.backgroundImage = 'url(' + bg + ')'
+              currentItem.setAttribute('data-loaded', '1')
+              currentItem.classList.remove('hide')
+              currentItem.classList.add(currentItem.getAttribute('data-animate'))
+              
+              // 计算已用时间，确保总显示时间至少0.8秒，最多2秒
+              var loadTime = Date.now() - startTime
+              var remainTime = Math.max(800, Math.min(2000 - loadTime, 1200))
+              
+              setTimeout(function() {
+                currentIndex++
+                showNextSlide()
+              }, remainTime)
+            }
+            
+            // 超时保护：2秒后强制切换，即使图片没加载完
             setTimeout(function() {
-              currentIndex++
-              showNextSlide()
-            }, 1500)
+              if (hasShown) return
+              hasShown = true
+              
+              // 即使没加载完也显示（可能显示空白，但不卡住）
+              currentItem.style.backgroundImage = 'url(' + bg + ')'
+              currentItem.setAttribute('data-loaded', '1')
+              currentItem.classList.remove('hide')
+              currentItem.classList.add(currentItem.getAttribute('data-animate'))
+              
+              // 立即切换下一张
+              setTimeout(function() {
+                currentIndex++
+                showNextSlide()
+              }, 300)
+            }, 2000)
+            
+            img.src = bg
           }
-          img.src = bg
-        }
 
-        // 开始轮播
-        setTimeout(showNextSlide, 500)
-      }
+          // 开始轮播
+          setTimeout(showNextSlide, 500)
+        }
 
       function setPageBackgrounds(index) {
         var pages = document.querySelectorAll('.page')

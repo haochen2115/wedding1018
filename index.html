@@ -130,7 +130,6 @@
         isMobile = true
       } else {
         console.log('pc')
-        loadSum = loadSum - 10
         isMobile = false
         document.getElementById('loading-txt').innerHTML = '请使用手机或其它移动设备打开!'
       }
@@ -147,33 +146,18 @@
   </div>
   <div id="play-btn"><i class="iconfont" style="font-size: 20px;">&#xe617;</i></div>
   <img class="load-img" onload="loadDone();pcTip()" src="./public/photo/1.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/2.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/3.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/4.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/6.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/7.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/8.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/9.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/10.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/11.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/12.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/13.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/14.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/15.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/16.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/17.jpg">
-  <img class="load-img" onload="loadDone()" src="./public/photo/18.jpg">
+
   <div class="wp">
     <div class="wp-inner">
       <div class="page page1">
         <div class="photo-wrap">
-          <div class="full-bg js-animate animated animation-8000"
+                    <div class="full-bg animation-8000"
             style="background-image: url(./public/photo/1.jpg);width: 100%;height: 100%;position: absolute;top:0;left: 0;"
             data-sec="zoomCycle" data-time="0">
           </div>
           <div class="full-bg js-animate animated animation-2000"
-            style="background-image: url(./public/photo/2.jpg);width: 100%;height: 100%;position: absolute;top:0;left: 0;"
-            data-sec="myzoomIn" data-time="12500">
+            style="width: 100%;height: 100%;position: absolute;top:0;left: 0;"
+            data-bg="./public/photo/2.jpg" data-sec="myzoomIn" data-time="12500">
           </div>
           <div class="text-frame js-animate animated" data-animate="rotateIn" data-time="500">
 
@@ -313,7 +297,7 @@
       <div class="page page2">
         <div class="photo-wrap">
           <div class="full-bg js-animate animated animation-1000"
-            style="background-image: url(./public/photo/3.jpg);width: 100%;height: 100%;" data-animate="myzoomIn">
+            style="width: 100%;height: 100%;" data-bg="./public/photo/3.jpg" data-animate="myzoomIn">
           </div>
         </div>
         <div class="ele-wrap">
@@ -364,11 +348,11 @@
       <div class="page page3">
         <div class="photo-wrap">
           <div class="full-bg js-animate animated animation-5000"
-            style="background-image: url(./public/photo/6.jpg);width: 100%;height: 100%;" data-sec="zoomCycle"
+            style="width: 100%;height: 100%;" data-bg="./public/photo/6.jpg" data-sec="zoomCycle"
             data-time="0">
           </div>
           <div class="full-bg js-animate animated animation-800"
-            style="background-image: url(./public/photo/4.jpg);width: 100%;height: 100%;position: absolute;top: 0;left: 0;"
+            style="width: 100%;height: 100%;position: absolute;top: 0;left: 0;" data-bg="./public/photo/4.jpg"
             data-animate="zoomIn" data-time="10500">
           </div>
           <div class="text-frame js-animate animated" data-animate="bounceInUp" data-time="1000" data-sec="fadeOutUp"
@@ -469,11 +453,11 @@
       <div class="page page4">
         <div class="photo-wrap">
           <div class="full-bg js-animate animated animation-5000"
-            style="background-image: url(./public/photo/7.jpg);width: 100%;height: 100%;" data-sec="zoomCycle"
+            style="width: 100%;height: 100%;" data-bg="./public/photo/7.jpg" data-sec="zoomCycle"
             data-time="0">
           </div>
           <div class="full-bg js-animate animated animation-600"
-            style="background-image: url(./public/photo/8.jpg);width: 100%;height: 100%;position: absolute;top: 0;left: 0;"
+            style="width: 100%;height: 100%;position: absolute;top: 0;left: 0;" data-bg="./public/photo/8.jpg"
             data-animate="zoomIn" data-time="10500">
           </div>
           <div class="text-frame js-animate animated" data-animate="lightSpeedIn" data-time="1000"
@@ -573,30 +557,14 @@
       </div>
       <div class="page page5">
         <div class="photo-wrap">
-          <div class="photo-box js-animate animated animation-2000" data-animate="fadeIn" data-time="500" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 1;
-                        background-image: url(./public/photo/9.jpg);"></div>
-          <div class="photo-box js-animate animated animation-2000" data-animate="fadeInDown" data-time="3000" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 2;
-                        background-image: url(./public/photo/10.jpg);"></div>
-          <div class="photo-box js-animate animated animation-2000" data-animate="fadeInUp" data-time="6000" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 3;
-                        background-image: url(./public/photo/11.jpg);"></div>
-          <div class="photo-box js-animate animated animation-2000" data-animate="fadeIn" data-time="9000" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 4;
-                        background-image: url(./public/photo/12.jpg);"></div>
-          <div class="photo-box js-animate animated animation-2000" data-animate="rollIn" data-time="12000" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 5;
-                        background-image: url(./public/photo/18.jpg);"></div>
-          <div class="photo-box js-animate animated animation-2000" data-animate="rotateInDownRight" data-time="15000"
-            style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 6;
-                        background-image: url(./public/photo/14.jpg);"></div>
-          <div class="photo-box js-animate animated animation-2000" data-animate="rotateIn" data-time="18000" style="position: absolute;width: 100%;height: 38%;top: 0;left: 0;z-index: 7;
-                        background-image: url(./public/photo/15.jpg);"></div>
-          <div class="photo-box js-animate animated animation-2000" data-animate="rotateInDownRight" data-time="18000"
-            style="position: absolute;width: 100%;height: 62%;top: 38%;left: 0;z-index: 8;
-                        background-image: url(./public/photo/16.jpg);"></div>
-          <div class="photo-box js-animate animated animation-2000" data-animate="rotateInDownRight" data-time="21000"
-            style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 9;
-                        background-image: url(./public/photo/17.jpg);"></div>
-          <div class="photo-box js-animate animated animation-2000" data-animate="zoomIn" data-time="24000" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 10;
-                        background-image: url(./public/photo/13.jpg);"></div>
-          <h4 class="js-animate animated animation-2000" data-animate="myzoomIn" data-time="24000"
+          <div class="photo-box js-animate animated animation-1000" data-animate="fadeIn" data-time="500" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 1;" data-bg="./public/photo/9.jpg"></div>
+          <div class="photo-box js-animate animated animation-1000" data-animate="fadeInUp" data-time="1800" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 3;" data-bg="./public/photo/11.jpg"></div>
+          <div class="photo-box js-animate animated animation-1000" data-animate="fadeIn" data-time="3100" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 4;" data-bg="./public/photo/12.jpg"></div>
+          <div class="photo-box js-animate animated animation-1000" data-animate="rollIn" data-time="4400" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 5;" data-bg="./public/photo/18.jpg"></div>
+          <div class="photo-box js-animate animated animation-1000" data-animate="rotateInDownRight" data-time="5700" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 6;" data-bg="./public/photo/14.jpg"></div>
+          <div class="photo-box js-animate animated animation-1000" data-animate="rotateInDownRight" data-time="7000" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 9;" data-bg="./public/photo/17.jpg"></div>
+          <div class="photo-box js-animate animated animation-1000" data-animate="zoomIn" data-time="8300" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 10;" data-bg="./public/photo/13.jpg"></div>
+          <h4 class="js-animate animated animation-1000" data-animate="myzoomIn" data-time="8800"
             style="position: absolute;width: 100%;bottom: 6%;left: 0;z-index: 11;text-align: center;line-height: 28px;">
             10月18日<br>
             邵阳市新贵都玫瑰园（香榭丽厅）
@@ -609,20 +577,6 @@
           </div>
         </div>
         <div class="ele-wrap">
-        </div>
-      </div>
-      <div class="page page6" style="position: relative;">
-        <div id="map"></div>
-        <div id="location-btn"><i class="iconfont" style="font-size: 32px;">&#xe616;</i></div>
-        <div id="map-msg">
-          <p class="js-animate animated" data-animate="bounceInDown" data-time="0"><i
-              class="iconfont red-icon">&#xe63e;</i>邵阳市新贵都玫瑰园（香榭丽厅）</p>
-          <p class="js-animate animated" data-animate="bounceInLeft" data-time="1000"><i
-              class="iconfont red-icon">&#xe622;</i>西湖北路东侧</p>
-          <p class="js-animate animated" data-animate="bounceInRight" data-time="2000"><i
-              class="iconfont red-icon">&#xe72b;</i>万桥公交站</p>
-          <p class="js-animate animated" data-animate="bounceInUp" data-time="3000"><i
-              class="iconfont red-icon">&#xe636;</i>有任何疑问请致电 新郎&新娘</p>
         </div>
       </div>
       <!-- Tips 页面 -->
@@ -657,35 +611,73 @@
           </div>
         </div>
       </div>
+      <!-- 静态地图图片页 -->
+      <div class="page page8">
+        <div class="photo-wrap" style="height: 75%; position: relative;">
+          <div class="full-bg js-animate animated animation-1000" data-animate="fadeIn" data-time="200" style="width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat; background-position: center;" data-bg="./public/photo/a2.jpg"></div>
+        </div>
+        <div class="ele-wrap" style="height: 25%; position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to bottom, rgba(226,236,245,0.8), rgba(226,236,245,0.95)); display: flex; align-items: center; justify-content: center;">
+          <h3 class="js-animate animated animation-800" data-animate="fadeInUp" data-time="1200" style="text-align: center; color: #3a3f58; letter-spacing: 2px; margin: 0; font-size: 18px;">
+            欢迎你来！🌹
+          </h3>
+        </div>
+      </div>
     </div>
     <span class="start"><i class="iconfont" style="color: #fff;font-size: 30px;">&#xe606;</i></span>
     <audio id="mp3" src="./public/music/music.mp3" autoplay loop></audio>
     <script src="./public/js/js.fullpage.js"></script>
-    <script type="text/javascript"
-      src="https://api.map.baidu.com/api?v=2.0&ak=S6EO9oPso0n8aTMvfH1g0aLUX6vGZx1l"></script>
     <script>
       // 滚屏动画控制
 
+      var started = false
+
       if (isMobile !== false) {
-        var loadTimer = setInterval(() => {
+        var loadTimer = setInterval(function () {
           console.log(loadSum)
-          if (loadSum >= 17) {
+          if (loadSum >= 1) {
             start()
           }
         }, 300);
       }
 
       var domLists = []
-      var mapFlag = false
+      // 已移除地图页
+
+      function setPageBackgrounds(index) {
+        var pages = document.querySelectorAll('.page')
+        var page = pages[index]
+        if (!page) return
+        var nodes = page.querySelectorAll('[data-bg]')
+        Array.prototype.forEach.call(nodes, function (el) {
+          var bg = (el.dataset && el.dataset.bg) ? el.dataset.bg : el.getAttribute('data-bg')
+          var loaded = (el.dataset && el.dataset.loaded) ? el.dataset.loaded : el.getAttribute('data-loaded')
+          if (!loaded && bg) {
+            el.style.backgroundImage = 'url(' + bg + ')'
+            if (el.dataset) {
+              el.dataset.loaded = '1'
+            } else {
+              el.setAttribute('data-loaded', '1')
+            }
+          }
+        })
+      }
+
+      function prefetchNext(index) {
+        setPageBackgrounds(index + 1)
+        setPageBackgrounds(index + 2)
+      }
 
       function start() {
         clearInterval(loadTimer);
 
         var forEach = [].forEach;
 
-        setTimeout(() => {
+        setTimeout(function() {
           document.getElementById('loading-mask').style.display = 'none'
         }, 100);
+        // 首屏设置背景，预取下一页
+        setPageBackgrounds(0)
+        prefetchNext(0)
         document.getElementsByClassName('wp-inner')[0].fullpage({
           change: function (e) {
             clearTime()
@@ -699,9 +691,9 @@
             });
           },
           afterChange: function (e) {
-            if (e.cur === 5 && !mapFlag) {
-              initMap()
-            }
+            // 懒加载本页与预取下一页背景
+            setPageBackgrounds(e.cur)
+            prefetchNext(e.cur)
 
             domLists = document.querySelectorAll('.page')[e.cur].querySelectorAll('.js-animate')
             forEach.call(domLists, v => {
@@ -723,83 +715,15 @@
       }
 
       function clearTime() {
-        domLists.forEach((dom, i, arr) => {
-          if (dom.timer) {
-            clearTimeout(dom.timer);
+        if (!domLists || !domLists.length) return
+        for (var i = 0; i < domLists.length; i++) {
+          var dom = domLists[i]
+          if (dom && dom.timer) {
+            clearTimeout(dom.timer)
           }
-          if (dom.sectimer) {
-            clearTimeout(dom.sectimer);
+          if (dom && dom.sectimer) {
+            clearTimeout(dom.sectimer)
           }
-          if (arr && arr.splice) {
-            arr.splice(i, 1)
-          }
-        })
-      }
-
-      // 地图
-      function initMap() {
-        if (window.BMap) {
-          mapFlag = true
-          var mapCenter = [111.461443,27.277698]
-          var map = new BMap.Map("map", { minZoom: 10, maxZoom: 14 })
-
-          map.centerAndZoom(new BMap.Point(mapCenter[0], mapCenter[1]), 13);
-
-          function ComplexCustomOverlay(point, text, mouseoverText) {
-            this._point = point;
-            this._text = text;
-            this._overText = mouseoverText;
-          }
-          ComplexCustomOverlay.prototype = new BMap.Overlay();
-          ComplexCustomOverlay.prototype.initialize = function (map) {
-            this._map = map;
-            var div = this._div = document.createElement("div");
-            div.style.position = "absolute";
-            div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
-            div.style.backgroundColor = "#E60000";
-            div.style.borderRadius = "3px";
-            div.style.color = "white";
-            div.style.height = "18px";
-            div.style.padding = "2px 4px";
-            div.style.lineHeight = "18px";
-            div.style.whiteSpace = "nowrap";
-            div.style.MozUserSelect = "none";
-            div.style.fontSize = "12px"
-            var span = this._span = document.createElement("span");
-            div.appendChild(span);
-            span.appendChild(document.createTextNode(this._text));
-            var that = this;
-
-            var arrow = this._arrow = document.createElement("div");
-            // arrow.style.background = "url(http://map.baidu.com/fwmap/upload/r/map/fwmap/static/house/images/label.png) no-repeat";
-            arrow.style.position = "absolute";
-            arrow.style.width = "0";
-            arrow.style.height = "0";
-            arrow.style.top = "22px";
-            arrow.style.left = "10px";
-            arrow.style.overflow = "hidden";
-            arrow.style.border = "6px solid transparent";
-            arrow.style.borderTop = "6px solid #E60000";
-            div.appendChild(arrow);
-
-            map.getPanes().labelPane.appendChild(div);
-
-            return div;
-          }
-          ComplexCustomOverlay.prototype.draw = function () {
-            var map = this._map;
-            var pixel = map.pointToOverlayPixel(this._point);
-            this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
-            this._div.style.top = pixel.y - 30 + "px";
-          }
-
-          var myCompOverlay = new ComplexCustomOverlay(new BMap.Point(mapCenter[0], mapCenter[1]), "婚礼", "N and Y");
-
-          map.addOverlay(myCompOverlay);
-
-          document.querySelector('#location-btn').addEventListener('click', () => {
-            map.panTo(new BMap.Point(mapCenter[0], mapCenter[1]))
-          })
         }
       }
 

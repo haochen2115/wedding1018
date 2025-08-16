@@ -9,7 +9,7 @@ import os
 from PIL import Image
 import math
 
-def compress_image(input_path, output_path, target_size_mb=0.5):
+def compress_image(input_path, output_path, target_size_mb=0.3):
     """
     压缩图片到指定大小以内
     
@@ -71,7 +71,7 @@ def compress_image(input_path, output_path, target_size_mb=0.5):
             
             quality -= 5
         
-        print(f"⚠ 警告: {os.path.basename(input_path)} 可能无法压缩到0.5MB以内")
+        print(f"⚠ 警告: {os.path.basename(input_path)} 可能无法压缩到0.3MB以内")
 
 def batch_compress_images(input_folder, output_folder=None):
     """
@@ -110,8 +110,8 @@ def batch_compress_images(input_folder, output_folder=None):
             original_size = os.path.getsize(input_path) / (1024 * 1024)
             print(f"\n📷 处理: {filename} (原始大小: {original_size:.2f}MB)")
             
-            if original_size <= 0.5:
-                print(f"✓ 跳过: {filename} 已经小于0.5MB")
+            if original_size <= 0.3:
+                print(f"✓ 跳过: {filename} 已经小于0.3MB")
                 # 如果输出路径不同，复制文件
                 if input_path != output_path:
                     import shutil
@@ -131,7 +131,7 @@ if __name__ == "__main__":
     
     print("🖼️  图片批量压缩工具")
     print(f"📂 输入文件夹: {input_folder}")
-    print("🎯 目标大小: 0.5MB以内")
+    print("🎯 目标大小: 0.3MB以内")
     print("=" * 50)
     
     if not os.path.exists(input_folder):

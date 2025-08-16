@@ -665,6 +665,14 @@
               if (hasShown) return
               hasShown = true
               
+              // 隐藏之前的图片，避免重叠
+              if (currentIndex > 0) {
+                var prevItem = items[currentIndex - 1]
+                if (prevItem) {
+                  prevItem.classList.add('hide')
+                }
+              }
+              
               // 图片加载完成，设置背景并显示
               currentItem.style.backgroundImage = 'url(' + bg + ')'
               currentItem.setAttribute('data-loaded', '1')
@@ -681,16 +689,24 @@
               }, remainTime)
             }
             
-            // 超时保护：2秒后强制切换，即使图片没加载完
-            setTimeout(function() {
-              if (hasShown) return
-              hasShown = true
-              
-              // 即使没加载完也显示（可能显示空白，但不卡住）
-              currentItem.style.backgroundImage = 'url(' + bg + ')'
-              currentItem.setAttribute('data-loaded', '1')
-              currentItem.classList.remove('hide')
-              currentItem.classList.add(currentItem.getAttribute('data-animate'))
+                          // 超时保护：2秒后强制切换，即使图片没加载完
+              setTimeout(function() {
+                if (hasShown) return
+                hasShown = true
+                
+                // 隐藏之前的图片，避免重叠
+                if (currentIndex > 0) {
+                  var prevItem = items[currentIndex - 1]
+                  if (prevItem) {
+                    prevItem.classList.add('hide')
+                  }
+                }
+                
+                // 即使没加载完也显示（可能显示空白，但不卡住）
+                currentItem.style.backgroundImage = 'url(' + bg + ')'
+                currentItem.setAttribute('data-loaded', '1')
+                currentItem.classList.remove('hide')
+                currentItem.classList.add(currentItem.getAttribute('data-animate'))
               
               // 立即切换下一张
               setTimeout(function() {
